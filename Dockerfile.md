@@ -17,11 +17,11 @@ The lifecycle of a Dockerfile typically involves the following stages:
 <h3>1️⃣ Create the Dockerfile</h3>
 A text file must be created name Dockerfile with capital D and no space:</br>
 </br>
-- Which base image to use</br>
-- Commands to install dependencies</br>
-- Files to copy</br>
-- Ports to expose</br>
-- The default command to run
+- Which base image to use.</br>
+- Commands to install dependencies.</br>
+- Files to copy.</br>
+- Ports to expose.</br>
+- The default command to run.
 
 <h3>2️⃣ Build the Docker Image</h3>
 You convert the Dockerfile into a Docker image using:</br>
@@ -52,9 +52,31 @@ We can upload the image to Docker Hub or any other registry:</br>
 <b>docker push username/my-app-image</b>
 
 <h3>8️⃣ Deploy the Image Anywhere</h3>
-Use the pushed image to deploy in:
-Other Docker hosts
-Cloud platforms
+Use the pushed image to deploy in:</br>
+Other Docker hosts.</br>
+Cloud platforms.
 
 <h3>📌 Summary</h3>
 <b>Dockerfile ➡️ docker build ➡️ Docker Image ➡️ docker run ➡️ Container</b>
+
+<h1>🧪 How to Write an Optimized Dockerfile</h1>
+Few best practices and techniques for writing an optimized Dockerfile includes:</br>
+<h3>✅ 1. Use a Lightweight Base Image</h3>
+Use minimal base images like Alpine, Debian-slim, or Distroless unless you need full OS support.</br>
+<b>FROM alpine:3.20</b>
+
+<h3>✅ 2. Minimize Layers</h3>
+Each instruction (RUN, COPY, ADD) creates a new layer. Reduce layers by combining related commands using &&.</br>
+<b>RUN apt-get update && apt-get install -y</b>
+
+<h3>✅ 3. Use .dockerignore File</h3>
+Prevent unnecessary files from being sent to the Docker daemon during build.</br>
+<b>Example:</b>
+<b>node_modules</b></br>
+<b>.git</b></br>
+<b>*.log</b></br>
+<b>Dockerfile</b>
+
+<h3>✅ 4. Avoid Installing Unnecessary Packages</h3>
+Only install packages what’s required for the app.
+
