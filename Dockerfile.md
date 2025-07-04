@@ -1,6 +1,6 @@
 <h1>📦 Dockerfile Overview</h1>
 
-A Dockerfile is a plain text file that defines a sequence of instructions for Docker to follow in order to build an image. It’s similar to a cookbook recipe—just like we follow steps to cook a dish, Docker follows these instructions to create image layers.
+A Dockerfile is a plain text file that defines a sequence of instructions for Docker to follow in order to build container images. It’s similar to a cookbook recipe—just like we follow steps to cook a dish, Docker follows these instructions to create image layers.
 
 Once the image is built, it can be shipped and deployed anywhere, and containers can be created from that image on any environment that supports Docker.
 
