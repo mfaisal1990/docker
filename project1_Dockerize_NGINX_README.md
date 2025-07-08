@@ -18,10 +18,15 @@ Command: <b>docker build -t task1_nginx:latest .</b>
 Command: <b>docker images</b></br>
 <p align="center"><img src="https://github.com/user-attachments/assets/0e7b8ed1-4c2c-4a27-ae14-2c753c2d2ec4" alt="image1" /></p>
 <b>Run the container in detached mode:</b>
+As we have created a docker image. Let’s Create a Container from that image.</br>
+Command: <b>docker run -d -p 80:80 --name nginx task1_nginx</b>
 <p align="center"><img src="https://github.com/user-attachments/assets/8cf88b36-504d-40cc-9c53-71a3bcb78d2e" alt="image1" /></p>
-<b>Output of running container (docker ps):</b>
+<b>Verify Container running:</b> Container is now created. We can verify by following command.</br>
+Command: <b>docker ps</b></br>
 <p align="center"><img src="https://github.com/user-attachments/assets/129db38c-667d-4449-967f-aa93d5918f0e" alt="image1" /></p>
-<b>Executing inside the container and verify by using curl:</b>
+<b>Executing inside the container and verify by using curl:</b></br>
+Command: <b>docker exec -it nginx sh</b></br>
+Command inside container: <b>curl localhost:80</b></br>
 <p align="center"><img src="https://github.com/user-attachments/assets/46895208-6f1c-42c2-aac8-a3b471d75a08" alt="image1" /></p>
 <b>Verify the page via Browser:</b>
 <p align="center"><img src="https://github.com/user-attachments/assets/9e2d8509-9b45-42be-8ac2-bc7acc2901a7" alt="image1" /></p>
